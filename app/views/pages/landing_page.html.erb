@@ -1,3 +1,22 @@
-<div>
-<h1>This is the landing page</h1>
-</div>
+<main>
+  <section class="h-96 flex justify-around items-center gap-10 bg-mainColor">
+    <div class="text-white text-center">
+      <p class="font-semibold text-3xl py-5">Rails Survey App</p>
+      <p>Create your first survey faster</p>
+      <p>Start sending surveys to different companies around the world!</p>
+      <div class="py-5 text-black">
+        <%= button_to root_path, id: "get-started" do %>
+          <div class="bg-signIn py-5 px-10 rounded">
+            <i class="fa-solid fa-arrow-right"></i>
+            <span class="ml-3">
+              Get started!
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <%= image_tag("survey.jpg", width: "600") %>
+    </div>
+  </section>
+</main>
