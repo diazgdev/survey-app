@@ -1,0 +1,45 @@
+<main class="h-screen bg-mainColor flex flex-row-reverse py-10">
+  <section class="w-3/6 flex justify-center items-center">
+    <div>
+      <%= image_tag("survey.jpg", width: "600") %>
+    </div>
+  </section>
+
+  <section class="w-3/6 flex justify-center items-center">
+    <div class="p-20 rounded-lg bg-formBg">
+      <h2 class="text-white font-semibold text-3xl text-center py-5">
+        Sign up
+      </h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field flex flex-col">
+          <%= f.label :email, class: "text-white text-lg p-1" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rounded-md text-sm" %>
+        </div>
+
+        <div class="field flex flex-col">
+          <%= f.label :password, class: "text-white text-lg p-1" %>
+          <% if @minimum_password_length %>
+          <em class="text-white text-sm">(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "rounded-md text-sm" %>
+        </div>
+
+        <div class="field flex flex-col">
+          <%= f.label :password_confirmation, class: "text-white text-lg p-1" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "rounded-md text-sm" %>
+        </div>
+
+        <div class="actions flex">
+          <div class="bg-signUp font-semibold rounded-md my-4">
+            <%= f.submit "Sign up", class: "cursor-pointer py-2 px-10" %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </section>
+</main>
