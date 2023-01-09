@@ -1,5 +1,4 @@
-<main class="h-screen bg-mainColor flex flex-reverse-row py-10">
-
+<main class="h-screen bg-mainColor flex py-10">
   <section class="w-3/6 flex justify-center items-center">
     <div>
       <%= image_tag("survey.jpg", width: "600") %>
@@ -8,7 +7,9 @@
 
   <section class="w-3/6 flex justify-center items-center">
     <div class="p-20 rounded-lg bg-formBg">
-      <h2 class="text-white font-semibold text-3xl text-center py-5">Log in</h2>
+      <h2 class="text-white font-semibold text-3xl text-center py-5">
+        Log in
+      </h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field flex flex-col">
