@@ -10,9 +10,17 @@
     </ul>
     <ul class="flex gap-3">
       <% if current_user %>
+        <li class="flex items-center text-sm">
+          <%= current_user.email %>
+        </li>
         <li class="bg-red-700 rounded">
-        <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "py-1 px-4 text-sm text-white font-semibold" %>
-      </li>
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "py-1 px-4 text-sm text-white font-semibold flex items-center" %>
+        </li>
+        <li class="flex items-center">
+          <%= button_to root_path, class: "settings_icon" do %>
+            <i class="fa-solid fa-gear"></i>
+          <% end %>
+        </li>
       <% else %>
         <li class="bg-signIn rounded">
           <%= button_to 'Sign in', new_user_session_path, method: :get, class: "py-1 px-4 text-sm text-black font-semibold" %>
